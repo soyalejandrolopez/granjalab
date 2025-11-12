@@ -1,6 +1,7 @@
 import { redirect } from 'next/navigation';
 import { createServerSupabaseClient } from '@/lib/supabase/server';
 import Navbar from '@/components/layout/Navbar';
+import Sidebar from '@/components/layout/Sidebar';
 import AdminDashboard from '@/components/dashboard/AdminDashboard';
 import { Profile } from '@/types/database.types';
 
@@ -34,9 +35,14 @@ export default async function AdminPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       <Navbar profile={validProfile} />
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
-        <AdminDashboard profile={validProfile} />
-      </main>
+      <div className="flex h-[calc(100vh-4rem)]">
+        <Sidebar profile={validProfile} />
+        <main className="flex-1 overflow-y-auto p-8">
+          <div className="max-w-7xl mx-auto">
+            <AdminDashboard profile={validProfile} />
+          </div>
+        </main>
+      </div>
     </div>
   );
 }
