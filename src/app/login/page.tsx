@@ -33,20 +33,39 @@ export default function LoginPage() {
       }
 
       if (data.user) {
-        // Obtener el perfil del usuario
-        const { data: profile } = await supabase
-          .from('profiles')
-          .select('rol')
-          .eq('id', data.user.id)
-          .single();
+        // Obtener el perfil del usuario con reintentos
+        let retries = 0;
+        const maxRetries = 5;
+        let profile = null;
+
+        while (retries < maxRetries) {
+          const { data: profileData, error: profileError } = await supabase
+            .from('profiles')
+            .select('rol')
+            .eq('id', data.user.id)
+            .single();
+
+          if (profileData && !profileError) {
+            profile = profileData;
+            break;
+          }
+
+          // Esperar 500ms antes de reintentar
+          await new Promise(resolve => setTimeout(resolve, 500));
+          retries++;
+        }
 
         if (profile) {
           const userProfile = profile as Pick<Profile, 'rol'>;
           // Redirigir según el rol
           router.push(`/${userProfile.rol}`);
+        } else {
+          setError('No se pudo obtener tu perfil. Por favor, contacta al administrador.');
+          setLoading(false);
         }
       }
     } catch (err) {
+      console.error('Error en login:', err);
       setError('Error al iniciar sesión');
       setLoading(false);
     }
