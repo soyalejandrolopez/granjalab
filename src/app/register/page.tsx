@@ -35,6 +35,7 @@ export default function RegisterPage() {
             nombre: formData.nombre,
             rol: formData.rol,
           },
+          emailRedirectTo: `${window.location.origin}/login`,
         },
       });
 
@@ -45,8 +46,39 @@ export default function RegisterPage() {
       }
 
       if (data.user) {
-        // Redirigir al dashboard según el rol
-        router.push(`/${formData.rol}`);
+        // Verificar si el usuario fue confirmado automáticamente
+        const session = data.session;
+
+        if (session) {
+          // Usuario confirmado automáticamente, esperar a que se cree el perfil
+          let retries = 0;
+          const maxRetries = 5;
+
+          while (retries < maxRetries) {
+            const { data: profile } = await supabase
+              .from('profiles')
+              .select('rol')
+              .eq('id', data.user.id)
+              .single();
+
+            if (profile) {
+              // Perfil encontrado, redirigir al dashboard
+              router.push(`/${formData.rol}`);
+              return;
+            }
+
+            // Esperar 500ms antes de reintentar
+            await new Promise(resolve => setTimeout(resolve, 500));
+            retries++;
+          }
+
+          // Si después de reintentos no se encontró el perfil, redirigir igualmente
+          router.push(`/${formData.rol}`);
+        } else {
+          // Usuario requiere confirmación de email
+          setError('Por favor, revisa tu correo para confirmar tu cuenta antes de iniciar sesión.');
+          setLoading(false);
+        }
       }
     } catch (err) {
       setError('Error al crear la cuenta');
