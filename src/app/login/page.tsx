@@ -72,8 +72,20 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-green-50 to-white flex items-center justify-center px-4">
-      <div className="w-full max-w-md">
+    <div className="min-h-screen bg-gradient-to-b from-green-50 to-white">
+      {/* Developer Info Header */}
+      <div className="bg-gradient-to-r from-green-600 to-green-700 text-white py-2 px-4">
+        <div className="max-w-7xl mx-auto">
+          <p className="text-xs text-center font-medium">
+            DESARROLLADO POR ALEJANDRO LOPEZ MURILLO - UNAD - UNIVERSIDAD NACIONAL ABIERTA Y A DISTANCIA
+            <span className="mx-2">|</span>
+            PROTOTIPO PROYECTO DE INGENIERIA 1 ~ NOV 2025
+          </p>
+        </div>
+      </div>
+
+      <div className="flex items-center justify-center px-4 min-h-[calc(100vh-3rem)]">
+        <div className="w-full max-w-md">
         <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-8">
           {/* Logo */}
           <div className="flex items-center justify-center gap-2 mb-8">
@@ -164,6 +176,7 @@ export default function LoginPage() {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 }

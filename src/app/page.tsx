@@ -4,6 +4,17 @@ import { Leaf, Users, TrendingUp, ArrowRight } from 'lucide-react';
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-green-50 to-white">
+      {/* Developer Info Header */}
+      <div className="bg-gradient-to-r from-green-600 to-green-700 text-white py-2 px-4">
+        <div className="max-w-7xl mx-auto">
+          <p className="text-xs text-center font-medium">
+            DESARROLLADO POR ALEJANDRO LOPEZ MURILLO - UNAD - UNIVERSIDAD NACIONAL ABIERTA Y A DISTANCIA
+            <span className="mx-2">|</span>
+            PROTOTIPO PROYECTO DE INGENIERIA 1 ~ NOV 2025
+          </p>
+        </div>
+      </div>
+      
       {/* Header */}
       <header className="border-b bg-white/80 backdrop-blur-sm">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 py-4">
