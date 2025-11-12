@@ -10,7 +10,7 @@ export default function Home() {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
               <Leaf className="w-7 h-7 text-green-600" />
-              <span className="text-xl font-bold text-gray-900">GranjaLab</span>
+              <span className="text-xl font-bold text-gray-900">ReciclajeApp</span>
             </div>
             <div className="flex items-center gap-3">
               <Link
@@ -102,7 +102,7 @@ export default function Home() {
         {/* Roles Section */}
         <div className="py-12">
           <h2 className="text-2xl font-bold text-center text-gray-900 mb-8">
-            ¿Quién puede usar GranjaLab?
+            ¿Quién puede usar ReciclajeApp?
           </h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="bg-white rounded-lg p-6 border border-gray-200">
@@ -133,10 +133,10 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-2">
               <Leaf className="w-5 h-5 text-green-600" />
-              <span className="font-semibold text-gray-900">GranjaLab</span>
+              <span className="font-semibold text-gray-900">ReciclajeApp</span>
             </div>
             <p className="text-sm text-gray-600">
-              © 2025 GranjaLab. Plataforma de gestión de residuos orgánicos.
+              © 2025 ReciclajeApp. Plataforma de gestión de residuos orgánicos.
             </p>
           </div>
         </div>

@@ -111,7 +111,7 @@ export default function RegisterPage() {
           {/* Logo */}
           <div className="flex items-center justify-center gap-2 mb-8">
             <Leaf className="w-8 h-8 text-green-600" />
-            <span className="text-2xl font-bold text-gray-900">GranjaLab</span>
+            <h1 className="text-3xl font-bold text-gray-900 mb-2">ReciclajeApp</h1>
           </div>
 
           {/* Header */}

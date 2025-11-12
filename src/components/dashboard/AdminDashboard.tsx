@@ -156,7 +156,7 @@ export default function AdminDashboard({ profile }: AdminDashboardProps) {
       {/* Header */}
       <div>
         <h1 className="text-3xl font-bold text-gray-900">Panel de Administración</h1>
-        <p className="text-gray-600 mt-2">Vista general de la plataforma GranjaLab</p>
+        <p className="text-gray-600 mt-2">Vista general de la plataforma ReciclajeApp</p>
       </div>
 
       {/* Stats */}

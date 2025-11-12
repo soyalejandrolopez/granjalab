@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "GranjaLab - Gestión de Residuos Orgánicos",
-  description: "Plataforma digital para conectar productores de residuos orgánicos con recicladores y gestores",
+  title: 'ReciclajeApp - Plataforma de Gestión de Residuos Orgánicos',
+  description: 'Plataforma que conecta productores de residuos orgánicos con recicladores y gestores',
 };
 
 export default function RootLayout({

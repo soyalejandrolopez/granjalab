@@ -78,7 +78,7 @@ export default function LoginPage() {
           {/* Logo */}
           <div className="flex items-center justify-center gap-2 mb-8">
             <Leaf className="w-8 h-8 text-green-600" />
-            <span className="text-2xl font-bold text-gray-900">GranjaLab</span>
+            <span className="text-2xl font-bold text-gray-900">ReciclajeApp</span>
           </div>
 
           {/* Header */}

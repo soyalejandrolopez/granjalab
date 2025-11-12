@@ -38,7 +38,7 @@ export default async function ProductorLayout({
   return (
     <div className="min-h-screen bg-gray-50">
       <Navbar profile={validProfile} />
-      <div className="flex h-[calc(100vh-4rem)]">
+      <div className="flex h-[calc(100vh-7rem)]">
         <Sidebar profile={validProfile} />
         <main className="flex-1 overflow-y-auto p-8">
           <div className="max-w-7xl mx-auto">
